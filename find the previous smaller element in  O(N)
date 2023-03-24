@@ -1,0 +1,21 @@
+# 100-Leetcode-Question-solution
+You can solve these question for basic understanding of competitive programming and logic building.
+int []s={34,5,33,444,335};
+           int []a=new int[s.length];
+           Stack<Integer>stack=new Stack<>();
+           for(int i=0;i<s.length;i++){
+               while(!stack.isEmpty()&&s[i]<=stack.peek()){
+                   stack.pop();
+               }
+               if(stack.isEmpty()){
+                   a[i]=-1;
+               }
+               else{
+                   a[i]=stack.peek();
+               }
+               stack.push(s[i]);
+           }
+           for(int i=0;i<a.length;i++){
+               System.out.print(a[i]+" ");
+           }
+
