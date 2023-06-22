@@ -1,0 +1,28 @@
+//https://leetcode.com/problems/maximum-69-number/description/
+// Beat 100%
+
+class Solution {
+    public int maximum69Number (int num) {
+            
+            List<Integer>al=new ArrayList<>();
+            while(num>0){
+               int rem=num%10;
+               al.add(rem);
+               num/=10;
+            }
+            for(int i=al.size()-1;i>=0;i--){
+                int j=al.get(i);
+                if(j==6){
+                    al.set(i,9);
+                    break;
+                }
+            }
+           
+            int k=0;
+            for(int i=al.size()-1;i>=0;i--){
+                k=k*10+al.get(i);
+            }
+        
+            return k;
+        }
+    }
